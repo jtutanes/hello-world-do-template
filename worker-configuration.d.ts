@@ -3,7 +3,7 @@
 // Runtime types generated with workerd@1.20250617.0 2025-10-08 
 declare namespace Cloudflare {
 	interface Env {
-		MY_DURABLE_OBJECT: DurableObjectNamespace<import("./src/index").MyDurableObject>;
+		WEBSOCKET_SERVER_DO: DurableObjectNamespace<import("./src/index").WebSocketServer>;
 	}
 }
 interface Env extends Cloudflare.Env {}

@@ -52,3 +52,15 @@ To learn more about Next.js, take a look at the following resources:
 - [Durable Objects](https://developers.cloudflare.com/durable-objects/) - learn about Durable Objects
 
 Your feedback and contributions are welcome!
+
+## Example client
+
+This project contains a small WebSocket client example you can use to test the Durable Object WebSocket server.
+
+1. Run the worker locally with Wrangler (or deploy it):
+
+	npx wrangler dev
+
+2. Open `examples/client.html` and update the `WS_URL` constant to the URL shown by `wrangler dev` (or your deployed worker URL).
+
+3. Open the HTML in a browser and use the console to send/receive messages.

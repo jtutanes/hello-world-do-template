@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Durable Object WebSocket Client</title>
+</head>
+<body>
+  <h1>Durable Object WebSocket Client</h1>
+  <p>Open the console to see messages.</p>
+  <script>
+    // Replace this with your worker URL (wrangler dev will show a URL)
+    const WS_URL = 'wss://localhost:8787/ws';
+
+    const ws = new WebSocket(WS_URL);
+    ws.onopen = () => {
+      console.log('connected');
+      ws.send(JSON.stringify({ type: 'msg', body: 'Hello from client.html' }));
+    };
+    ws.onmessage = (e) => console.log('msg', e.data);
+    ws.onclose = () => console.log('closed');
+    ws.onerror = (e) => console.error('ws error', e);
+  </script>
+</body>
+</html>

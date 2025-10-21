@@ -1,5 +1,4 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "hello-world-do-template",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-10-08",

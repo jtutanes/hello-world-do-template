@@ -8,13 +8,17 @@
   <h1>Durable Object WebSocket Client</h1>
   <p>Open the console to see messages.</p>
   <script>
-    // Replace this with your worker URL (wrangler dev will show a URL)
+    // Replace this with your worker URL (wrangler dev will show a URL). Use wss:// for deployed workers.
     const WS_URL = 'wss://localhost:8787/ws';
 
     const ws = new WebSocket(WS_URL);
     ws.onopen = () => {
       console.log('connected');
-      ws.send(JSON.stringify({ type: 'msg', body: 'Hello from client.html' }));
+      // join the 'main' channel and send a channel message
+      ws.send(JSON.stringify({ type: 'join', channel: 'main' }));
+      setTimeout(() => {
+        ws.send(JSON.stringify({ type: 'msg', channel: 'main', body: 'Hello channel main' }));
+      }, 200);
     };
     ws.onmessage = (e) => console.log('msg', e.data);
     ws.onclose = () => console.log('closed');

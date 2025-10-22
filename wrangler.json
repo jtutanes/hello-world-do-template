@@ -1,5 +1,5 @@
 {
-	"name": "hello-world-do-template",
+	"name": "ws2",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-10-08",
 	"upload_source_maps": true,
@@ -19,5 +19,8 @@
 	},
 	"observability": {
 		"enabled": true
+	},
+	"vars": {
+		"secret_key": "6YtT76ix8tuLtVzyXEESj9bnX3QHojyU"
 	}
 }
